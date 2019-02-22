@@ -1,0 +1,15 @@
+India/New Delhi
+United States of America/Washington D.C.
+Egypt/Cairo
+Germany/Berlin
+England/London
+France/Paris
+Italy/Rome
+Spain/Barcelona
+Portgual/Lisbon
+Brazil/Brasila
+Columbia/Bogata
+Peru/Lima
+Panama/Panama City
+Mexico/Mexico City
+Cuba/Havana
