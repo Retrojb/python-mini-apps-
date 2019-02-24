@@ -1,15 +1,5 @@
-from tkinter import Tk, messagebox, simpledialog
-
-def get_task():
-    task = simpledialog.askstring('Task', 'Good Day 007: \n Would you like to send or read a secret message to M? '
-                                          '\n Want to Encrypt or Decrypt?')
-    return task
-
-
-def get_message():
-    message = simpledialog.askstring('Message', 'Enter your message')
-    return message
-
+import tkinter as tk
+from tkinter import messagebox, simpledialog
 
 def is_even(number):
     return number % 2 == 0
@@ -56,11 +46,27 @@ def decrypt(message):
     return decrypted_message
 
 
+def get_task():
+    task = simpledialog.askstring('Task', 'Good Day 007: \n Would you like to send or read a secret message to M? '
+                                          '\n Want to Encrypt or Decrypt?')
+    return task
+
+
+def get_message():
+    message = simpledialog.askstring('Message', 'Enter your message')
+    return message
+
+
+##This would be used as a public main class method and passed to the other classes
 def close_app():
     root.destroy()
 
 
-root = Tk()
+root = tk.Tk()
+frame = tk.Frame(root)
+frame.pack()
+button = tk.Button(frame, text="Close", fg="red", command=root.destroy).pack()
+# button.pack(side=tk.LEFT)
 root.resizable(0, 0)
 root.withdraw()
 
@@ -70,15 +76,12 @@ while True:
     if task == 'encrypt':
         message = get_message()
         encrypted = letter_swap(message)
-        messagebox.showinfo('Ah Mr Bond: The decrypted message from M is:', encrypted)
+        tk.messagebox.showinfo('Ah Mr Bond: The decrypted message from M is:', encrypted)
     elif task == 'decrypt':
         message = get_message()
         decrypted = letter_swap(message)
-        messagebox.showinfo('Good Day 007, send M an encrypted message', decrypted)
+        tk.messagebox.showinfo('Good Day 007, send M an encrypted message', decrypted)
     else:
         error = 'You must have done something wrong please enter: encrypt or decrypt?'
-        messagebox.showinfo('Message Error', error)
-
-
-
+        tk.messagebox.showinfo('Message Error', error)
 root.mainloop()
